@@ -13,12 +13,13 @@ function createEmbed() {
     return new Discord.RichEmbed()
 }
 
-
-
-
+function getAllPreviousMessages(message) {
+    return message.author.dmChannel.messages.entries()
+}
 
 
 module.exports = {
     parseMessage,
-    createEmbed
+    createEmbed,
+    getAllPreviousMessages
 }

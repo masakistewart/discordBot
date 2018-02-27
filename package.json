@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "BOT_TOKEN=$BOT_TOKEN nodemon src",
     "test": "jest --verbose"
   },
   "keywords": [],
@@ -16,6 +17,7 @@
     "libsodium": "^0.7.3",
     "libsodium-wrappers": "^0.5.4",
     "moment": "^2.20.1",
+    "mongoose": "^5.0.7",
     "node-fetch": "^2.0.0",
     "node-opus": "^0.2.7",
     "opusscript": "0.0.6",

@@ -44,3 +44,9 @@ describe("#userinfo", () => {
         expect(message.author.username).toBeTruthy()
     })
 })
+
+describe("#preferences", () => {
+    it("should send a preferences dialogue if the user is new", () => {
+        expect(messageHanlder.preferences).toBeDefined()
+    })
+})
