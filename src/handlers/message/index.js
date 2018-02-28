@@ -3,7 +3,7 @@ const utils = require('../../utils')
 const fetch = require('node-fetch')
 const moment = require('moment')
 const { User } = require("../../db/index")
-
+const { db } = require('../../utils/index')
 class MessageHanlder {
     
     hello(message) {
@@ -41,7 +41,7 @@ class MessageHanlder {
     }
 
     preferences(message) {
-        findOrCreate(User, message)
+        db.user.findOrCreate(User, message)
         // true: setUserInDB, start signup dialogue
 
         // false: return the users preferences
@@ -49,7 +49,7 @@ class MessageHanlder {
 
     commandNotFound(message) {
         const embed = utils.createEmbed()
-        embed.setColor('#E65212')
+        embed.setColor('red')
         embed.setImage("https://http.cat/404")
         message.channel.send(embed)
     }

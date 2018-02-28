@@ -32,7 +32,7 @@ describe("#hello", () => {
 })
 
 describe("#userinfo", () => {
-    it("should use send method", () => {
+    it("should use send method of the message object", () => {
         messageHanlder.userInfo(message)
         expect(mockSend).toBeCalled()
     })
@@ -48,5 +48,9 @@ describe("#userinfo", () => {
 describe("#preferences", () => {
     it("should send a preferences dialogue if the user is new", () => {
         expect(messageHanlder.preferences).toBeDefined()
+    })
+
+    it("should use the send method", () => {
+        expect(messageHanlder.preferences(message))
     })
 })
