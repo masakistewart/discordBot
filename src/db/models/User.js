@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('../connection')
 
 const userSchema = mongoose.Schema({
     userName: String,
@@ -7,7 +7,8 @@ const userSchema = mongoose.Schema({
     dateJoinedEnki: Date,
     lastOnline: Date,
     userID: Number,
-    topics: Array
+    topics: Array,
+    lastLesson: String
 })
 
 userSchema.pre('save', function (next) {

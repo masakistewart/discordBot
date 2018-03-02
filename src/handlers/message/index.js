@@ -48,7 +48,7 @@ class MessageHanlder {
     }
 
     commandNotFound(message) {
-        const embed = utils.createEmbed()
+        const embed = utils.messages.createEmbed()
         embed.setColor('red')
         embed.setImage("https://http.cat/404")
         message.channel.send(embed)

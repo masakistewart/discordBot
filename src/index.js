@@ -5,12 +5,8 @@ const handlers          = require('./handlers')
 const { messageHanlder }    = handlers
 const client                = new discord.Client()
 
-const mongoose = require('mongoose')
-
 client.on('ready', async () => {
     console.log(`logged in as ${client.user.username}`)
-    mongoose.connect('mongodb://localhost/discordBotDB')
-
     // try {
     //     let link = await client.generateInvite(["ADMINISTRATOR"])
     //     console.log(link)
@@ -23,6 +19,7 @@ client.on('ready', async () => {
 client.on('message', async message => {
     const { command, msg } = messages.parseMessage(message)
     if (!command) return
+    console.log(command)
     switch (command) {
         case "hello":
             messageHanlder.hello(message)
@@ -48,7 +45,7 @@ client.on('message', async message => {
 
 try {
     console.log(getToken())
-    // client.login(getToken())
+    client.login(getToken())
 } catch(e) {
     console.log("error: ===> ", e.stack)
 }

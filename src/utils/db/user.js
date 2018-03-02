@@ -8,16 +8,20 @@ function userFactory(message) {
     }
 }
 
-function findOrCreate(User, message) {
-    const user = User.find({ username: message.author.username }, (err, user) => {
-        if (user) {
-            User(userFactory(message)).save((err, er) => {
-                console.log(err, er)
-                message.channel.send("User Has Been Saved")
-            })
-        }
-    })
+async function findOrCreate(User, message) {
+    const user = await User.findOne({ username: message.author.username })
+    
+    if (user) return user
+
+    createUser(User, message)
 }
+
+function createUser(User, message) {
+    new User(userFactory(message)).save()
+}
+
+
+
 
 module.exports = {
     userFactory,

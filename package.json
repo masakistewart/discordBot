@@ -1,7 +1,7 @@
 {
   "name": "discordJSBot",
   "version": "1.0.0",
-  "description": "",
+  "description": "thing",
   "main": "index.js",
   "scripts": {
     "start": "BOT_TOKEN=$BOT_TOKEN nodemon src",
@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "bufferutil": "^3.0.3",
+    "curriculum-tools": "0.0.5",
     "discord.js": "^11.3.0",
     "erlpack": "github:discordapp/erlpack",
     "libsodium": "^0.7.3",
