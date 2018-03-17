@@ -1,1 +1,4 @@
 node_modules
+--json
+.vscode
+${env:BOT_TOKEN}

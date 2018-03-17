@@ -2,7 +2,7 @@ const discord           = require("discord.js")
 const { messages }   =     require('./utils')
 const handlers          = require('./handlers')
 
-const { messageHanlder }    = handlers
+const { messageHandler }    = handlers
 const client                = new discord.Client()
 
 client.on('ready', async () => {
@@ -22,22 +22,23 @@ client.on('message', async message => {
     console.log(command)
     switch (command) {
         case "hello":
-            messageHanlder.hello(message)
+            messageHandler.hello(message)
             break
         case "userinfo":
-            messageHanlder.userInfo(message)
+            messageHandler.userInfo(message)
             break
-        case "serve content":
+        case "content":
+            messageHandler.serveContent(message)
             break
         case "preferences":
-            messageHanlder.preferences(message)
+            messageHandler.preferences(message)
             break
         case "joke":
-            messageHanlder.chuckNorris(message)
+            messageHandler.chuckNorris(message)
             break
         default:
             console.log(command)
-            messageHanlder.commandNotFound(message)
+            messageHandler.commandNotFound(message)
             break
     }
 })

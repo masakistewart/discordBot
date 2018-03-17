@@ -1,4 +1,4 @@
-const { messageHanlder } = require('../handlers')
+const { messageHandler } = require('../handlers')
 
 mockSend = jest.fn()
 
@@ -21,19 +21,19 @@ const message = {
 
 describe("#hello", () => {
     it("should use the send method", () => {
-        messageHanlder.hello(message)
+        messageHandler.hello(message)
         expect(mockSend).toBeCalled()
     }) 
 
     it("should greet the user with their own username", () => {
-        messageHanlder.hello(message)
+        messageHandler.hello(message)
         expect(mockSend).toBeCalledWith("Hello Cairo Stewart")
     })
 })
 
 describe("#userinfo", () => {
     it("should use send method of the message object", () => {
-        messageHanlder.userInfo(message)
+        messageHandler.userInfo(message)
         expect(mockSend).toBeCalled()
     })
 
@@ -47,10 +47,10 @@ describe("#userinfo", () => {
 
 describe("#preferences", () => {
     it("should send a preferences dialogue if the user is new", () => {
-        expect(messageHanlder.preferences).toBeDefined()
+        expect(messageHandler.preferences).toBeDefined()
     })
 
     it("should use the send method", () => {
-        expect(messageHanlder.preferences(message))
+        expect(messageHandler.preferences(message))
     })
 })

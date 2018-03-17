@@ -1,5 +1,5 @@
-const messageHanlder = require('./message')
+const messageHandler = require('./message')
 
 module.exports = {
-    messageHanlder
+    messageHandler
 }
