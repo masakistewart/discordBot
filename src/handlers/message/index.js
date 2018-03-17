@@ -1,4 +1,4 @@
-const parser = require('../../curriculum-parser/es/parser').parse;
+// const parser = require('../../curriculum-parser/es/parser').parse;
 
 const Discord = require('discord.js')
 const utils = require('../../utils')
